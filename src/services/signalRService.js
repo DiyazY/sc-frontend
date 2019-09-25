@@ -6,7 +6,8 @@ export function initSignalRService(hubUrl = "") {
   try {
     let hub = new signalR.HubConnectionBuilder().withUrl(hubUrl).build();
 
-    const onStreamSubscribers = new Map(); //contains all subscribers of onStream
+    //contains all subscribers of onStream
+    const onStreamSubscribers = new Map();
 
     hub.on("onStream", payload => {
       onStreamSubscribers.forEach(p => p.call(null, "stream", payload));

@@ -10,12 +10,13 @@ const CpuWidget = () =>{
     useEffect(()=>{
         streamService.createNewChannel(_channel);        
         const stream = streamService.get(_channel);
-
+        const isSubscribed = true;
         const subscription = stream && stream.subscribe(payload => {
-            payload && setCpu(payload.percentage);
+            isSubscribed && payload && setCpu(payload.percentage);
         });
         return ()=>{
             subscription && subscription.unsubscribe();
+            isSubscribed = false;
         }
     }, [])
 

@@ -10,11 +10,13 @@ const RamWidget = () =>{
     useEffect(()=>{
         streamService.createNewChannel(_channel);  
         const stream = streamService.get(_channel);
+        const isSubscribed = true;
         const subscription = stream && stream.subscribe(payload => {
-            payload && setRam(payload.percentage);
+            isSubscribed && payload && setRam(payload.percentage);
         });
         return ()=>{
             subscription && subscription.unsubscribe();
+            isSubscribed = false;
         }
     }, [])
 
