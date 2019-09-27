@@ -20,7 +20,7 @@ const CpuWidget = () =>{
         }
     }, [])
 
-    return <div>
+    return <div className="with-border">
         CPU: {cpu}
     </div>
 }

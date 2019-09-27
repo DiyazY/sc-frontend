@@ -20,7 +20,7 @@ const RamWidget = () =>{
         }
     }, [])
 
-    return <div>
+    return <div className="with-border">
         RAM: {ram}
     </div>
 }

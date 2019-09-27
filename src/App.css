@@ -25,7 +25,7 @@
 
 .with-border{
   border: dotted;
-  padding: 10px;
+  padding: 30px;
 }
 
 @keyframes App-logo-spin {

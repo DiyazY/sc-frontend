@@ -8,7 +8,8 @@ function StreamComponent() {
   useStreams("https://localhost:5001/mh");
 
   return (
-    <div>
+    <div className="with-border">
+      main
       <Panel2/>
     </div>
   );
